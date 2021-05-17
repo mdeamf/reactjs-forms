@@ -1,10 +1,13 @@
 import './App.css';
 import { ControlledFunctionalForm } from './components/ControlledFunctionalForm';
+import { ControlledClassForm } from './components/ControlledClassForm';
 
 function App() {
   return (
     <div className="App">
-      <ControlledFunctionalForm/>
+      {/* <ControlledFunctionalForm/> */}
+
+      <ControlledClassForm />
     </div>
   );
 }
