@@ -17,6 +17,8 @@ export const ReactHookForm = () => {
 
   console.log(LOG, 'name changed', watch('name'));
 
+  console.log(LOG, 'cpf changed', watch('cpf'));
+
   console.log(LOG, 'form errors', errors);
 
   return (
