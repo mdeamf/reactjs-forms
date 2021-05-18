@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 const LOG = '[REACT HOOK FORM]';
@@ -9,12 +9,17 @@ export const ReactHookForm = () => {
     handleSubmit,
     watch,
     trigger,
+    formState,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(LOG, 'form submitted', data);
   };
+
+  useEffect(() => {
+    console.log(LOG, 'formState', formState);
+  }, [formState]);
 
   console.log(LOG, 'name changed', watch('name'));
 
