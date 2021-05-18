@@ -2,6 +2,7 @@ import './App.css';
 import { ControlledFunctionalForm } from './components/ControlledFunctionalForm';
 import { ControlledClassForm } from './components/ControlledClassForm';
 import { ReactHookForm } from './components/ReactHookForm';
+import { FormikForm } from './components/FormikForm';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
 
       {/* <ControlledClassForm /> */}
 
-      <ReactHookForm />
+      {/* <ReactHookForm /> */}
+
+      <FormikForm />
     </div>
   );
 }
