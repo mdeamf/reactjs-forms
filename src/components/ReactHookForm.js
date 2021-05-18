@@ -24,12 +24,22 @@ export const ReactHookForm = () => {
       <input
         name="name"
         type="text"
-        placeholder="test"
+        placeholder="Type your name!"
         {...register('name', { required: true })}
       />
-      <input type="submit" />
 
       <div>{errors.name && 'Name contains an error!'}</div>
+
+      <input
+        name="cpf"
+        type="text"
+        placeholder="Inform your CPF"
+        {...register('cpf', { required: true, pattern: /[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}/gm })}
+      />
+
+      <div>{errors.cpf && 'CPF contains an error!'}</div>
+
+      <input type="submit" />
     </form>
   );
 };
