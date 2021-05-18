@@ -8,6 +8,7 @@ export const ReactHookForm = () => {
     register,
     handleSubmit,
     watch,
+    trigger,
     formState: { errors },
   } = useForm();
 
@@ -29,6 +30,14 @@ export const ReactHookForm = () => {
         placeholder="Type your name!"
         {...register('name', { required: true })}
       />
+      <button
+        type="button"
+        onClick={async () =>
+          console.log(LOG, 'validate name', await trigger('name'))
+        }
+      >
+        Validate Name
+      </button>
 
       <div>{errors.name && 'Name contains an error!'}</div>
 
@@ -36,8 +45,19 @@ export const ReactHookForm = () => {
         name="cpf"
         type="text"
         placeholder="Inform your CPF"
-        {...register('cpf', { required: true, pattern: /[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}/gm })}
+        {...register('cpf', {
+          required: true,
+          pattern: /[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}/gm,
+        })}
       />
+      <button
+        type="button"
+        onClick={async () =>
+          console.log(LOG, 'validate cpf', await trigger('cpf'))
+        }
+      >
+        Validate CPF
+      </button>
 
       <div>{errors.cpf && 'CPF contains an error!'}</div>
 
